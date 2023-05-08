@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container mt-4">
+
+    <div class="p-4 m-4">
+
+
+        <div class="col-lg-5 rounded mx-auto border pt-4">
+            <div class="text-center col">
+
+                <img
+                src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2021/03/results-1615646723.jpg" alt=""
+                class="" style="height: 150px;">
+            <!-- <hr> -->
+            <div class="display-8">Create An Account</div>
+            <hr>
+            </div>
+            <h3 hidden class="alert alert-light border rounded">Create An Account</h3>
+            <form action="/" method="POST">
+
+                {% csrf_token %}
+
+                {% if error%}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {% endif %}
+                <!-- firstname -->
+                <div class="form-group">
+                    <label for="">First Name</label>
+                    <input type="text" name="firstname"
+                     id="" value="{{values.first_name}}" class="form-control form-control-sm"
+                     placeholder="">
+                </div>
+
+                <!-- last name -->
+                <div class="form-group">
+                    <label for="">Last Name</label>
+                    <input type="text" name="lastname"
+                    id="" value="{{values.last_name}}" class="form-control form-control-sm"
+                    >
+                </div>
+
+                <!-- phone -->
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="text" name="phone"
+                    id="" class="form-control form-control-sm"
+                    value="{{values.phone}}"
+                    placeholder="565698959"
+                    >
+                </div>
+                <!-- email -->
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input required type="email" name="email" id=""
+                    value="{{values.email}}"
+                    class=" form-control-sm form-control" placeholder="example@gmail.com">
+                </div>
+
+
+                <!-- password -->
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password"
+                    name="password"
+                    id=""
+                     class="form-control form-control-sm" placeholder="********">
+                </div>
+
+                <hr>
+                <div class="form-group">
+                    <input class="btn btn-sm btn-info" type="submit" value="Create An Account ">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+ <a style="border:3px solid blue;" href="/login/">LOGIN HERE</a>
+
+
+
+</body>
+</html>
